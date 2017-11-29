@@ -1,0 +1,83 @@
+.reviews{
+
+    &__container{
+        position: relative;
+    }
+
+    &__slider{
+        overflow: hidden;
+        width: calc(100% / 12 * 10 - 30px);
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include transition();
+    }
+
+    &__item{
+        width: 270px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 60px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__video{
+        @include size(100%, 150px);
+        margin-bottom: 15px;
+
+        iframe{
+            @include size(100%);
+        }
+    }
+
+    &__text{
+        color: text-color(text);
+        font-size: rem(16px);
+        line-height: rem(24px);
+    }
+
+    &__navs{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: calc(50% - 35px);
+        z-index: 1;
+    }
+
+    &__nav{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 13px rgba(37, 37, 37, 0.25);
+        @include size(70px);
+        border-radius: 50%;
+        border: 2px solid $white-color;
+        background-color: bg-color(accent);
+        cursor: pointer;
+
+        &:after{
+            content: "";
+            @include size(15px);
+            border-bottom: 2px solid $white-color;
+            border-left: 2px solid $white-color;
+            border-radius: 3px;
+        }
+
+        &.prev{ transform: rotate(45deg) }
+            
+        &.next{ transform: rotate(-135deg) }
+    }
+
+
+}

@@ -1,0 +1,98 @@
+.form{
+    width: 515px;
+    background-color: lighten(bg-color(accent), 5.5%);
+    padding: 15px 30px;
+
+    &__heading{
+        color: text-color(white);
+        font-size: rem(24px);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+
+        &:after{
+            content: "";
+            display: block;
+            @include size(100%, 1px);
+            margin-top: 15px;
+            background-color: bg-color(white);
+        }
+    }
+
+    &__group{
+        position: relative;
+        margin-bottom: 25px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        &_between{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__input{
+        @include size(100%, 40px);
+        border: 0;
+        border-radius: 3px;
+        background-color: bg-color(white);
+        font-size: rem(14px);
+        padding: 0 15px 0 45px;
+        box-sizing: border-box;
+        font-family: $baseff;
+        outline: none;
+    }
+
+    &__icon{
+        fill: $accent-color;
+        position: absolute;
+        left: 17px;
+        top: calc(50% - 7px);
+    }
+
+    &__switch{
+        box-shadow: inset 0 0 5px rgba(23, 90, 121, 0.75);
+        background-color: #1e7197;
+        @include size(70px, 30px);
+        margin-right: 15px;
+        border-radius: 3px;
+        position: relative;
+
+        &-wrap{
+            display: flex;
+            align-items: center;
+        }
+
+        &-lbl{
+            position: absolute;
+            @include size(24px);
+            border-radius: 3px;
+            background-color: bg-color(white);
+            display: block;
+            cursor: pointer;
+            top: 3px;
+            left: 3px;
+        }
+
+        &-text{
+            font-size: rem(14px);
+            color: text-color(white);
+        }
+    }
+    
+    &__submit{
+        height: 40px;
+        padding: 0 15px;
+        background-color: bg-color(accent);
+        border: 0;
+        border-bottom: 2px solid bg-color(overlay);
+        border-radius: 3px;
+        font-size: rem(14px);
+        color: text-color(white);
+        text-align: center;
+        cursor: pointer;
+    }
+}

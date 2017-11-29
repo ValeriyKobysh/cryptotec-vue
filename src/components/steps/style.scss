@@ -1,0 +1,83 @@
+.steps{
+    background-image: url(~img/steps-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 515px;
+    position: relative;
+    padding: 40px 0;
+    box-sizing: border-box;
+
+    &:before{
+        content: "";
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+        background-color: rgba(bg-color(overlay), .75);
+        z-index: 1;
+    }
+
+    * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__heading{
+        color: text-color(white);
+        text-transform: uppercase;
+        font-size: rem(36px);
+        font-weight: 400;
+        margin: 0 0 40px;
+    }
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    &__item{
+        counter-increment: number;
+        display: flex;
+        align-items: center;
+        font-size: rem(18px);
+        line-height: rem(24px);
+        color: text-color(white);
+        width: calc(100% / 2 - 15px);
+        margin-bottom: 35px;
+
+        &:before{
+            content: counter(number) ".";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include size(55px);
+            border-radius: 50%;
+            background-color: bg-color(white);
+            color: text-color(accent);
+            font-size: rem(30px);
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__link{
+        text-transform: uppercase;
+        color: text-color(white);
+        font-size: rem(20px);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include size(365px, 50px);
+        border: 2px solid $white-color;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background-color: bg-color(accent);
+        margin: 0 auto;
+    }
+}

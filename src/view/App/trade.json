@@ -1,0 +1,56 @@
+[
+    {
+        "vip": true,
+        "price": 25000,
+        "income": 150000,
+        "timing": 15
+    },
+    {
+        "vip": true,
+        "price": 10000,
+        "income": 100000,
+        "timing": 10
+    },
+    {
+        "vip": true,
+        "price": 5000,
+        "income": 50000,
+        "timing": 10
+    },
+    {
+        "vip": false,
+        "price": 3000,
+        "income": 35000,
+        "timing": 7
+    },
+    {
+        "vip": false,
+        "price": 2500,
+        "income": 25000,
+        "timing": 10
+    },
+    {
+        "vip": false,
+        "price": 1500,
+        "income": 15000,
+        "timing": 5
+    },
+    {
+        "vip": false,
+        "price": 500,
+        "income": 3000,
+        "timing": 5
+    },
+    {
+        "vip": false,
+        "price": 400,
+        "income": 1000,
+        "timing": 5
+    },
+    {
+        "vip": false,
+        "price": 300,
+        "income": 700,
+        "timing": 2
+    }
+]

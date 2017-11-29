@@ -1,0 +1,83 @@
+.welcome{
+    min-height: 500px;
+    padding: 60px 0;
+    box-sizing: border-box;
+    background-image: url(~img/welcome-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:before{
+        content: '';
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+        background-color: rgba(bg-color(overlay), .75);
+        z-index: 1;
+    }
+
+    * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__heading, &__desc{
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    &__heading{
+        text-transform: uppercase;
+        font-size: rem(76px);
+        color: text-color(grey);
+        font-weight: 400;
+        margin: 0 0 80px 0;
+
+        .bold{
+            display: block;
+            font-size: rem(60px);
+            font-weight: 700;
+        }
+    }
+
+    &__desc{
+        color: text-color(white);
+        font-weight: 400;
+        font-size: rem(30px);
+        margin-bottom: 50px;
+    }
+
+    &__btns{
+        display: flex;
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: text-color(white);
+        font-size: rem(20px);
+        font-weight: 700;
+        border: 2px solid $white-color;
+        border-radius: 10px;
+        height: 45px;
+        padding: 0 20px;
+
+        &_default{
+            margin-right: 60px;
+            background-color: bg-color(grey);
+        }
+
+        &_accent{
+            background-color: bg-color(accent);
+        }
+    }
+}

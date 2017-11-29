@@ -1,0 +1,53 @@
+.principles{
+    padding: 90px 0;
+
+    &__heading{
+        color: text-color(accent);
+        font-size: rem(36px);
+        line-height: rem(24px);
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 70px;
+    }
+
+    &__item{
+        margin-bottom: 7px;
+    }
+
+    &__top{
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @include size(90px);
+        background-color: bg-color(accent);
+        border-radius: 50%;
+        margin-right: 20px;
+        box-shadow: 3px 4px 13px rgba(35, 31, 32, 0.35);
+
+        & > svg {
+            fill: $white-color;
+        }
+    }
+
+    &__title{
+        display: inline-flex;
+        align-items: center;
+        color: text-color(accent);
+        font-size: rem(24px);
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    &__text{
+        color: text-color(text);
+        font-size: rem(18px);
+        line-height: rem(24px);
+        font-weight: 400;
+    }
+}

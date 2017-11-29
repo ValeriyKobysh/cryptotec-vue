@@ -1,0 +1,57 @@
+// ### BASE ###
+    $basefz: 16px!default;
+    $baseff: 'Open Sans', sans-serif!default;
+    $countColumnsDesktop: 12;
+    $countColumnsTablet: 8;
+    $countColumnsMobile: 4;
+
+// ### COLORS ###
+    $white-color: #ffffff;
+    $black-color: black;
+    $accent-color: #279ad7;
+    $accent-dark-color: #0a76ae;
+    $grey-color: #363636;
+    $green-color: #08faa2;
+
+$bg-color: (
+    white: $white-color,
+    overlay: $accent-dark-color,
+    grey: $grey-color,
+    accent: $accent-color
+);
+
+$ui-color: (
+    success: $green-color
+);
+
+$text-color: (
+    grey: $grey-color,
+    white: $white-color,
+    title: lighten($grey-color, 1.5%),
+    text: lighten($grey-color, 6%),
+    accent: $accent-color,
+    green: $green-color
+);
+
+// ###BREAKPOINTS###
+$xl: 1200px;
+$lg: 992px;
+$md: 798px;
+$sm: 576px;
+$xs: 360px;
+
+$breakpoints: (
+    xl: $xl,
+    lg: $lg,
+    md: $md,
+    sm: $sm,
+    xs: $xs
+);
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+.header{
+    height: 100px;
+    background-color: bg-color(white);
+    position: relative;
+    z-index: 10;
+
+    &_inner{ 
+        box-shadow: 0 0 5px rgba(75, 75, 75, 0.35);
+        margin-bottom: 25px;
+    }
+
+    &__container{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__logo{
+        width: calc(100% / 12 * 3 - 15px);
+
+        &-link{ display: block; }
+
+        &-icon{ max-width: 100%; }
+    }
+
+    &__nav{
+        flex-grow: 1;
+
+        &-list{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &-item{
+            margin-left: 30px;
+
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+
+        &-link{
+            color: text-color(title);
+            font-size: rem(14px);
+            text-transform: uppercase;
+
+            &.top-line:before{
+                content: '';
+                display: flex;
+                @include size(100%, 1px);
+                background-color: bg-color(grey);
+            }
+        }
+
+        &-icon{
+            fill: text-color(title);
+            margin-right: 10px;
+        }
+    }
+
+    &__balance{
+        flex-grow: 1;
+        height: 100%;
+
+        &-list, &-item{
+            display: flex;
+            height: 100%;
+        }
+
+        &-item{
+            flex-wrap: wrap;
+            align-items: center;
+            flex-grow: 1;
+            flex-shrink: 2;
+            padding: 25px 5px;
+            box-sizing: border-box;
+
+            &:first-child{
+                width: 210px;
+                background-color: bg-color(accent);
+                position: relative;
+                justify-content: flex-end;
+
+                & > svg{
+                    fill: text-color(white);
+                    position: absolute;
+                    left: 15px;
+                    top: 25px;
+                }
+
+                .header__balance-title, .header__balance-number{
+                    color: text-color(white);
+                    font-weight: 700;
+                    width: 70%;
+                }
+
+                .header__balance-title{
+                    text-transform: uppercase;
+                }
+
+                .header__balance-number{
+                    fill: text-color(white);
+                    font-size: rem(24px);
+                }
+            }
+        }
+
+        &-title, &-number{
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        &-title{
+            color: text-color(accent);
+            font-size: rem(14px);
+        }
+
+        &-number{
+            font-size: rem(16px);
+            color: #13c920;
+            font-weight: 700;
+            fill: #13c920;
+        }
+    }
+
+    &__account{
+        @include size(100px, 100%);
+        background-color: bg-color(accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        position: relative;
+        user-select: none;
+
+        &-icon{ 
+            fill: $white-color;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            
+            &:after{
+                content: '';
+                display: flex;
+                border-top: 5px solid $white-color;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                margin-left: 10px; 
+            }
+        }
+
+        &-drop{ 
+            position: absolute;
+            top: 100%;
+            right: 0;
+            box-shadow: 0 0 13px rgba(63, 63, 63, 0.25);
+            width: 260px;
+            z-index: 10;
+            background-color: bg-color(white);
+        }
+
+        &-header{
+            background-color: #f1f1f1;
+            padding: 15px;
+        }
+
+        &-date, &-id{
+            display: block;
+            text-align: center;
+            color: text-color(text);
+        }
+
+        &-date{
+            font-size: rem(12px);
+            margin-bottom: 10px;
+        }
+
+        &-id{
+            font-size: rem(14px);
+            text-transform: uppercase;
+
+            .mark{ color: text-color(accent); }
+        }
+
+        &-list{
+            padding: 10px 15px;
+        }
+
+        &-link{
+            display: flex;
+            align-items: center;
+            height: 40px;
+            color: #c5c5c5;
+            fill: #c5c5c5;
+            font-size: rem(14px);
+            @include transition();
+
+            &:hover, &:active{
+                color: text-color(accent);
+                fill: text-color(accent);
+            }
+        }
+
+        &-img{
+            margin-right: 12px;
+        }
+    }
+}

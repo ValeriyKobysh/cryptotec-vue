@@ -1,0 +1,32 @@
+@function rem($pxval){
+    @return (($pxval / $basefz) * 1rem);
+}
+
+@function calc-width($Columns, $Column){
+    @return (100 / $Column) * $Columns * 1%;
+}
+
+@function bg-color($key){
+    @if map-has-key($bg-color, $key){
+        @return map-get($bg-color, $key);
+    }
+    @warn "Unknown `#{$key}` in $bg-color.";
+    @return null;
+}
+
+@function text-color($key){
+    @if map-has-key($text-color, $key){
+        @return map-get($text-color, $key);
+    }
+    @warn "Unknown `#{$key}` in $text-color.";
+    @return null;
+}
+
+@function breakpoints($key){
+    @if map-has-key($breakpoints, $key){
+        @return map-get($breakpoints, $key);
+    }
+    @warn "Unknown `#{$key}` in $breakpoints.";
+    @return null;
+}
+

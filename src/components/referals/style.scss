@@ -1,0 +1,90 @@
+.referals{
+    padding-left: 15px;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__heading{
+        color: #525252;
+        font-size: rem(18px);
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__rank{
+        color: text-color(accent);
+        font-size: rem(14px);
+        text-decoration: underline;
+    }
+
+    &__structure{
+
+        &-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        &-item{
+            background-color: #f5f5f5;
+            box-shadow: 0 0 5px rgba(69, 69, 69, 0.15);
+            border-radius: 3px;
+            padding: 25px 15px;
+            box-sizing: border-box;
+            width: calc(100% / 3 - 15px);
+            height: 105px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            justify-content: space-between;
+        }
+        
+        &-title{
+            color: text-color(title);
+            text-transform: uppercase;
+            font-size: rem(12px);
+        }
+
+        &-value{
+            color: text-color(accent);
+            font-weight: 700;
+            font-size: 16px;
+        }
+    }
+
+    &__activity{
+        width: 475px;
+
+        &-list {
+            border-top: 2px solid $accent-color;
+            margin-top: 15px;
+        }
+
+        &-item{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e1e1e1;
+            font-size: rem(14px);
+        }
+
+        &-title{ color: #525252; }
+
+        &-value{ 
+            color: text-color(accent);
+            display: inline-flex;
+            width: 100px;
+            text-align: center;
+            justify-content: center; 
+        }
+    }
+}

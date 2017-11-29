@@ -1,0 +1,69 @@
+.statistic{
+    min-height: 690px;
+    background-image: url(~img/steps-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 100px;
+    box-sizing: border-box;
+
+    &:before{
+        content: "";
+        display: flex;
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(bg-color(overlay), .75);
+        z-index: 1;
+    }
+
+    &__container{
+        position: relative;
+        z-index: 2;
+    }
+
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item{
+        width: calc(100% / 3 - 30px);
+        margin-bottom: 65px;
+    }
+
+    &__heading, &__number{
+        font-size: rem(48px);
+        line-height: rem(24px);
+        font-weight: 700;
+    }
+
+    &__heading{
+        color: text-color(white);
+        text-transform: uppercase;
+        margin: 0 0 115px;
+        text-align: center;
+    }
+
+    &__number{
+        color: text-color(green);
+    }
+
+    &__unit{
+        color: text-color(green);
+        font-size: rem(30px);
+        line-height: rem(24px);
+    }
+
+    &__desc{
+        color: text-color(white);
+        font-size: rem(20px);
+        line-height: rem(24px);
+        display: flex;
+        padding-top: 15px;
+    }
+
+}
