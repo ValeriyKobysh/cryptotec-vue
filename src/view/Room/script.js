@@ -12,7 +12,12 @@ export default {
                     title: 'Выплата по деплзитам и инвестициям в тейдинг ',
                     publish: '2017/03/17 17:00'
                 }
-            ]
+            ],
+            header: {
+                balance: true,
+                account: true,
+                nav: false
+            }
         }
     },
     computed: {

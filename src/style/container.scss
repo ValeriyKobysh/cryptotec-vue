@@ -6,24 +6,26 @@
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0 15px;
+    max-width: $xl - 30px;
+    min-width: $xl - 30px;
 }
 
-@include media-breakpoint-up(breakpoints(xl)){
-    .container{ max-width: $xl - 30px; }
-}
+// @include media-breakpoint-up(breakpoints(xl)){
+//     .container{ max-width: $xl - 30px; }
+// }
 
-@include media-breakpoint-between(breakpoints(lg), breakpoints(xl)){
-    .container{ max-width: $lg - 32px; }
-}
+// @include media-breakpoint-between(breakpoints(lg), breakpoints(xl)){
+//     .container{ max-width: $lg - 32px; }
+// }
 
-@include media-breakpoint-between(breakpoints(md), breakpoints(lg)){
-    .container{ max-width: $md - 30px; }
-}
+// @include media-breakpoint-between(breakpoints(md), breakpoints(lg)){
+//     .container{ max-width: $md - 30px; }
+// }
 
-@include media-breakpoint-between(breakpoints(sm), breakpoints(md)){
-    .container{ max-width: $sm - 36px; }
-}
+// @include media-breakpoint-between(breakpoints(sm), breakpoints(md)){
+//     .container{ max-width: $sm - 36px; }
+// }
 
-@include media-breakpoint-down(breakpoints(sm)){
-    .container{ max-width: 100%; }
-}
+// @include media-breakpoint-down(breakpoints(sm)){
+//     .container{ max-width: 100%; }
+// }

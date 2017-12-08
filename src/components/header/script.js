@@ -16,45 +16,20 @@ export default {
     data() {
         return {
             accountShow: false,
-            balanceTitle: ['ВАШ БАЛАНС:', 'За сегодня', 'За неделю', 'За месяц', 'За все время'],
-            navs: [
-                {
-                    title: 'Регистрация',
-                    icon: 'sign',
-                    routeName: 'auth',
-                    params: {
-                        tab: 'sign'
-                    },
-                    showAtRouteName: 'home'
-                },
-                {
-                    title: 'Вход в кабинет',
-                    icon: 'enter',
-                    routeName: 'auth',
-                    params: {
-                        tab: 'login'
-                    },
-                    showAtRouteName: 'home'
-                },
-                {
-                    title: 'На главную страницу',
-                    icon: 'back',
-                    routeName: 'home',
-                    showAtRouteName: 'auth',
-                    customClass: 'top-line'
-                }
-            ]
+            balanceTitle: ['ВАШ БАЛАНС:', 'За сегодня', 'За неделю', 'За месяц', 'За все время']
         }
     },
     computed: {
         ...mapGetters(['getStatus']), 
     },
     props: {
-        balance: { type: Array, default: [0,0,0,0,0] }
+        balance: { type: Array },
+        header: { type: Object },
+        navs: { type: Array }
     },
     methods: {
         routeName(name){
-            return this.$route.name === name;
+            return this.$route.path === name;
         },
         toggleAccount(){
             this.accountShow = !this.accountShow;
@@ -88,6 +63,5 @@ export default {
         rubIcon, dollarIcon
     },
     created() {
-
     }
 }

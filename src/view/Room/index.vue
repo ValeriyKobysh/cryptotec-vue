@@ -7,7 +7,9 @@
                         li.room__top-line-item
                             img.room__top-line-img(src="~img/top-line/top-line-" + i + "-img.png")
 
-        header-component.header_inner(:balance="balance")
+        header-component.header_inner(
+            :balance="balance"
+            :header="header")
 
         .room__wrapper
             .room__container.container

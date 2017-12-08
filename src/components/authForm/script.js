@@ -1,50 +1,56 @@
-import formAuth from './form/form'
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex'
 
+//#region import plugins
+import keys from 'lodash.keys'
+//endregion
+
+//#region import icons
 import signIcon from '../../assets/image/key-icon.svg'
 import loginIcon from '../../assets/image/enter-icon.svg'
 import recoveryIcon from '../../assets/image/refresh-icon.svg'
+import errorIcon from '../../assets/image/error-icon.svg'
+import closeIcon from '../../assets/image/close-icon.svg'
+//endregion
 
 export default{
     data() {
         return {
-            tab: '',
+            errorFields: [],
             tabs: [
-                {
-                    title: 'Регистрация',
-                    icon: 'sign',
-                    fields: [
-                        { name: 'phone', placeholder: '+1 201-555-0123', value: '', type: 'phone' },
-                        { name: 'email', placeholder: 'Введите e-mail', value: '', type: 'email' },
-                        { name: 'password', placeholder: 'Пароль', value: '', type: 'password' },
-                        { name: 'repeatPassword', placeholder: 'Повторите пароль', value: '', type: 'password' },
-                        { name: 'idCustomers', placeholder: 'ID партнера', value: '', type: 'text' }
-                    ]
-                },
-                {
-                    title: 'Вход',
-                    icon: 'login',
-                    fields: [
-                        { name: 'login', placeholder: 'Введите телефон или e-mail', value: '', type: 'text' },
-                        { name: 'password', placeholder: 'Пароль', value: '', type: 'password' },
-                    ]
-                },
-                {
-                    title: 'Восстановление пароля',
-                    icon: 'recovery',
-                    fields: [
-                        { name: 'login', placeholder: 'Введите телефон или e-mail', value: '', type: 'text' }
-                    ]
-                }
+                { title: 'Регистрация', icon: 'sign-icon', auth: 'sign' },
+                { title: 'Вход', icon: 'login-icon', auth: 'login' },
+                { title: 'Восстановление пароля', icon: 'recovery-icon', auth: 'recovery' }
             ]
         }
     },
-    components: {
-        formAuth,
-        signIcon, loginIcon, recoveryIcon
+    computed: {
     },
+    components: {
+        signIcon, loginIcon, recoveryIcon, errorIcon, closeIcon
+    },
+
     methods: {
-        getParamTab(match){
-            return this.$route.params.tab === match;
+        ...mapActions(['newUser', 'loginUser']),
+        updateTabs(data){
+            let tab = this.tabs[data.index],
+                propNanes = keys(data);
+            tab.fields.forEach(element => {
+
+                propNanes.forEach(prop => {
+                    if(element.name === prop){
+                        element.value = data[prop]
+                    }
+                });
+            })
+        },
+        fetchErrors(errors){
+            this.errorFields = errors;
+        },
+        updateErrors(errors){
+            this.errorFields = errors
+        },
+        resetError(){
+            this.errorFields = []
         }
     },
     created(){

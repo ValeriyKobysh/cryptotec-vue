@@ -1,5 +1,9 @@
 <template lang='pug'>
     .index-page
+        header-component(
+            :header="header"
+            :navs="nav")
+
         welcome-section
 
         about-section

@@ -1,10 +1,7 @@
 <template lang="pug">
     #app
-        //- header-component
-
-        router-view
-
-        //- footer-component
+        transition
+            router-view
 </template>
 
 <script src="./script.js"></script>

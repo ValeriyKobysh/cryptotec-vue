@@ -1,6 +1,39 @@
 .auth{
-    // height: 100%;
     padding: 70px 0;
+
+    &__error{
+        position: fixed;
+        z-index: 100;
+        top: 2px;
+        left: calc(50% - 175px);
+        width: 350px;
+        background-color: bg-color(error);
+        padding: 30px 15px;
+        border-radius: 3px;
+        box-shadow: 0 0 13px rgba(64, 64, 64, 0.15);
+        display: flex;
+
+        &-icon{
+            fill: $white-color;
+            margin-right: 15px;
+        }
+
+        &-close{
+            border: 0;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            fill: $white-color;
+        }
+
+        &-item{
+            color: text-color(white);
+            font-size: rem(14px);
+            line-height: rem(24px);
+        }
+    }
 
     &__container{
         display: flex;

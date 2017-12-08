@@ -12,16 +12,19 @@
     $accent-dark-color: #0a76ae;
     $grey-color: #363636;
     $green-color: #08faa2;
+    $error-color: #f5a314;
 
 $bg-color: (
     white: $white-color,
     overlay: $accent-dark-color,
     grey: $grey-color,
-    accent: $accent-color
+    accent: $accent-color,
+    error: $error-color
 );
 
 $ui-color: (
-    success: $green-color
+    success: $green-color,
+    error: $error-color
 );
 
 $text-color: (

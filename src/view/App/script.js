@@ -5,6 +5,9 @@ import footerComponent from './../../components/footer'
 
 export default {
     name: 'app',
+    metaInfo: {
+      title: 'Cryptotec'
+    },
     data () {
       return {
         

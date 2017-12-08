@@ -5,7 +5,7 @@
                 router-link.header__logo-link(:to="{name: 'home'}")
                     img.header__logo-icon(src="~img/header-logo-img.png")
 
-            .header__balance
+            .header__balance(v-if="header.balance")
                 ul.header__balance-list.list
                     li.header__balance-item(v-for="(bal, index, key) in balance" :key="index")
                         dollar-icon.header__balance-bigicon(width="50" height="50" v-if="index == 0")
@@ -13,7 +13,7 @@
                         span.header__balance-number {{balansNumber(bal)}}&nbsp;
                             rubIcon.header__balance-icon(height="13")
 
-            .header__account
+            .header__account(v-if="header.account")
                 .header__account-icon(@click="toggleAccount")
                     account-icon(height="40" width="40")
 
@@ -40,17 +40,14 @@
                                 enter-icon.header__account-img(width="20" height="20")
                                 | Выход
 
-            //- .header__nav
-            //-     ul.header__nav-list.list
-            //-         li.header__nav-item(v-for="nav in navs" v-if="routeName(nav.showAtRouteName)")
-            //-             router-link.header__nav-link.link(
-            //-                 :to="{ name: nav.routeName, params: nav.params }" 
-                            
-            //-                 ) 
-            //-                 user-icon.header__nav-icon(height="12" v-if="nav.icon === 'sign'")
-            //-                 enter-icon.header__nav-icon(height="12" v-else-if="nav.icon === 'enter'")
-            //-                 backdoor-icon.header__nav-icon(height="12" v-else-if="nav.icon === 'back'")
-            //-                 | {{nav.title}}
+            .header__nav(v-if="header.nav")
+                ul.header__nav-list.list
+                    li.header__nav-item(v-for="nav in navs")
+                        router-link.header__nav-link.link(
+                            :to="{ name: nav.routeName }"
+                            )
+                            component.header__nav-icon(:is="nav.icon" height="12") 
+                            | {{nav.title}}
 </template>
 
 <script src='./script.js'></script>

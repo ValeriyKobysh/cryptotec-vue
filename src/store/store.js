@@ -18,7 +18,7 @@ const store = new Vuex.Store({
 
     },
     getters: {
-        $http: () => (VueResource) 
+        $http: () => (VueResource),
     },
     actions: {
 

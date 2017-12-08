@@ -1,32 +1,34 @@
 <template lang='pug'>
     .auth
+        .auth__error(v-if="errorFields.length > 0")
+            button.auth__error-close()
+                close-icon(height="10")
+            error-icon.auth__error-icon(height="30")
+            ul.auth__error-list.list
+                li.auth__error-item(v-for="error in errorFields") {{error.message}}
+
         .auth__container.container 
             .auth__logo
                 img(src="~img/header-logo-img.png")
             ul.auth__tabs.list
                 li.auth__tab(v-for="(tab, index) in tabs" :key="index")
                     router-link.auth__link.link(
-                        :to="{ name: 'auth', params: {tab: tab.icon}}"
-                        active-class="active") 
-                        sign-icon.auth__icon(v-if="tab.icon === 'sign'" height="15" width="15")
-                        login-icon.auth__icon(v-else-if="tab.icon === 'login'" height="15" width="15")
-                        recovery-icon.auth__icon(v-else-if="tab.icon === 'recovery'" height="15" width="15")
-                        | {{tab.title}}
-            form-auth(
-                v-for="(form, index) in tabs"
-                v-if="getParamTab(form.icon)"
-                :key="index"
-                :fields="form.fields" 
-                :title="form.title")
-                sign-icon.auth__icon(slot="iconTitle" v-if="form.icon === 'sign'" height="30" width="30")
-                login-icon.auth__icon(slot="iconTitle" v-else-if="form.icon === 'login'" height="30" width="30")
-                recovery-icon.auth__icon(slot="iconTitle" v-else-if="form.icon === 'recovery'" height="30" width="30")
+                        :to="{ name: tab.auth }"
+                        active-class="active"
+                        @click="resetError"
+                        exact=true) 
 
-                sign-icon.auth__icon(slot="iconButton" v-if="form.icon === 'sign'" height="15" width="15")
-                login-icon.auth__icon(slot="iconButton" v-else-if="form.icon === 'login'" height="15" width="15")
-                recovery-icon.auth__icon(slot="iconButton" v-else-if="form.icon === 'recovery'" height="15" width="15")
+                        component.auth__icon(:is="tab.icon" height="15" width="15") 
+
+                        | {{tab.title}}
+
+            router-view(
+                @errors="updateErrors"
+                @resetError="resetError"
+                )
+
 </template>
 
 <script src='./script.js'></script>
 
-<style lang='scss' src='./style.scss' scoped></style>
+<style lang='scss' src='./style.scss'></style>

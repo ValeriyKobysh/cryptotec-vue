@@ -9,6 +9,9 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "lodash.assign": "^4.2.0",
+    "lodash.forin": "^4.4.0",
+    "lodash.keys": "^4.2.0",
     "normalize.css": "^7.0.0",
     "prerender-spa-plugin": "^2.1.0",
     "simple-vue-validator": "^0.14.1",

@@ -1,5 +1,10 @@
 <template lang='pug'>
     .auth-page
+        header-component(
+            :header="header" 
+            :navs="nav"
+            )
+
         auth-section
 </template>
 
